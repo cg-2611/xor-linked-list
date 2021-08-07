@@ -6,6 +6,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define MAX_SIZE 64
+
 struct node
 {
     char *string;

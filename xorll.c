@@ -1,7 +1,5 @@
 #include "xorll.h"
 
-#define MAX_SIZE 64
-
 // returns the xor of node1 and node 2
 struct node *XOR(struct node *node1, struct node *node2)
 {
@@ -203,7 +201,7 @@ void insert_before_node(struct node **head_p, const char *target, const char *no
     current_node->link = XOR(XOR(previous_node, new_node), current_node->link);
 }
 
-// inserts a node before a given node in the linked list
+// inserts a node after a given node in the linked list
 void insert_after_node(struct node **head_p, const char *target, const char *node_string)
 {
     if ((strlen(node_string) + 1) * sizeof(*node_string) > MAX_SIZE)
@@ -451,39 +449,4 @@ void free_list(struct node *head)
 
         free_node(temp_node);
     } while (current_node != NULL);
-}
-
-int main(int argc, char *argv[])
-{
-    struct node *head = NULL;
-
-    insert_node_front(&head, "Alpha");
-    insert_node_front(&head, "Bravo");
-    insert_node_end(&head, "Charlie");
-    insert_before_node(&head, "Alpha", "Delta");
-    insert_after_node(&head, "Delta", "Echo");
-    print_list(head);
-
-    char string[MAX_SIZE];
-    int remove_status;
-
-    remove_status = remove_node_before(&head, "Charlie", string);
-    printf("\nRemoved %s (status: %d)\n\n", string, remove_status);
-    print_list(head);
-
-    remove_status = remove_node_after(&head, "Delta", string);
-    printf("\nRemoved %s (status: %d)\n\n", string, remove_status);
-    print_list(head);
-
-    remove_status = remove_front_node(&head, string);
-    printf("\nRemoved %s (status: %d)\n\n", string, remove_status);
-    print_list(head);
-
-    remove_status = remove_end_node(&head, string);
-    printf("\nRemoved %s (status: %d)\n\n", string, remove_status);
-    print_list(head);
-
-    free_list(head);
-
-    return 0;
 }
