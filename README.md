@@ -14,4 +14,4 @@ For example, for a demonstration, use the provided `main.c`. Compile into a sing
 clang -o main main.c xorll.c
 ```
 Then the binary file `main` can be run.
-> Note; you can use any C compiler of your choice, as well as any compiler options of your choice.
+> Note: you can use any C compiler of your choice, as well as any compiler options of your choice.
