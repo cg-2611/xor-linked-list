@@ -150,7 +150,7 @@ void insert_node_end(struct node **head_p, const char *node_string)
 }
 
 // inserts a node before a given node in the linked list
-void insert_before_node(struct node **head_p, const char *target, const char *node_string)
+void insert_node_before(struct node **head_p, const char *target, const char *node_string)
 {
     if ((strlen(node_string) + 1) * sizeof(*node_string) > MAX_SIZE)
     {
@@ -202,7 +202,7 @@ void insert_before_node(struct node **head_p, const char *target, const char *no
 }
 
 // inserts a node after a given node in the linked list
-void insert_after_node(struct node **head_p, const char *target, const char *node_string)
+void insert_node_after(struct node **head_p, const char *target, const char *node_string)
 {
     if ((strlen(node_string) + 1) * sizeof(*node_string) > MAX_SIZE)
     {
@@ -254,7 +254,7 @@ void insert_after_node(struct node **head_p, const char *target, const char *nod
 }
 
 // removes the node at the beginning of the list
-int remove_front_node(struct node **head_p, char *removed_string)
+int remove_node_front(struct node **head_p, char *removed_string)
 {
     if (*head_p == NULL)
     {
@@ -281,7 +281,7 @@ int remove_front_node(struct node **head_p, char *removed_string)
 }
 
 // remove the node at the end of the list
-int remove_end_node(struct node **head_p, char *removed_string)
+int remove_node_end(struct node **head_p, char *removed_string)
 {
     if (*head_p == NULL)
     {

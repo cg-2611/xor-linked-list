@@ -7,8 +7,8 @@ int main(int argc, char *argv[])
     insert_node_front(&head, "Alpha");
     insert_node_front(&head, "Bravo");
     insert_node_end(&head, "Charlie");
-    insert_before_node(&head, "Alpha", "Delta");
-    insert_after_node(&head, "Delta", "Echo");
+    insert_node_before(&head, "Alpha", "Delta");
+    insert_node_after(&head, "Delta", "Echo");
     print_list(head);
 
     char string[MAX_SIZE];
@@ -22,11 +22,11 @@ int main(int argc, char *argv[])
     printf("\nRemoved %s (status: %d)\n\n", string, remove_status);
     print_list(head);
 
-    remove_status = remove_front_node(&head, string);
+    remove_status = remove_node_front(&head, string);
     printf("\nRemoved %s (status: %d)\n\n", string, remove_status);
     print_list(head);
 
-    remove_status = remove_end_node(&head, string);
+    remove_status = remove_node_end(&head, string);
     printf("\nRemoved %s (status: %d)\n\n", string, remove_status);
     print_list(head);
 

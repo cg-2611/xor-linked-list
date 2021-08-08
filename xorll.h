@@ -23,11 +23,11 @@ void free_node(struct node *);
 
 void insert_node_front(struct node **, const char *);
 void insert_node_end(struct node **, const char *);
-void insert_before_node(struct node **, const char *, const char *);
-void insert_after_node(struct node **, const char *, const char *);
+void insert_node_before(struct node **, const char *, const char *);
+void insert_node_after(struct node **, const char *, const char *);
 
-int remove_front_node(struct node **, char *);
-int remove_end_node(struct node **, char *);
+int remove_node_front(struct node **, char *);
+int remove_node_end(struct node **, char *);
 int remove_node_before(struct node **, const char *, char *);
 int remove_node_after(struct node **, const char *, char *);
 
